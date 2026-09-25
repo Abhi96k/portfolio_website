@@ -4,7 +4,7 @@ import { Section, Reveal } from "./ui";
 
 export default function About() {
   const facts = [
-    { icon: LuBriefcase, k: "Now", v: `SDE @ ${profile.company}` },
+    { icon: LuBriefcase, k: "Now", v: `${profile.role} @ ${profile.company}` },
     { icon: LuMapPin, k: "Based in", v: profile.location },
     { icon: LuGraduationCap, k: "Studied", v: `B.Tech CSE (AI & ML), ${education.grade}` },
   ];

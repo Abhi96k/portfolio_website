@@ -49,8 +49,7 @@ function ProjectCard({ p, onOpen }) {
         <h3 className="pcard-title">{p.title}</h3>
         <p className="pcard-summary">{p.summary}</p>
         <div className="chips">
-          {p.stack.slice(0, 3).map((s) => <span key={s} className="chip chip-sm">{s}</span>)}
-          {p.stack.length > 3 && <span className="chip chip-sm faint">+{p.stack.length - 3}</span>}
+          {p.stack.map((s) => <span key={s} className="chip chip-sm">{s}</span>)}
         </div>
         <div className="pcard-links">
           {p.github && (
@@ -141,10 +140,10 @@ export default function Projects() {
 
   return (
     <Section id="projects" index="04" label="projects" title="Things I've built."
-      intro="Side projects where I explore queues, observability, cloud deployment and full-stack product work. Click any card for details.">
+      intro="Selected side projects where I explore queues, observability, cloud deployment and real-time systems. Click any card for details.">
       <Reveal className="proj-toolbar">
         <div className="tabs" role="tablist" aria-label="Filter projects">
-          {projectFilters.map((f) => (
+          {projectFilters.filter((f) => counts[f.id] > 0).map((f) => (
             <button key={f.id} role="tab" aria-selected={filter === f.id}
               className={`tab ${filter === f.id ? "is-active" : ""}`} onClick={() => setFilter(f.id)}>
               {filter === f.id && <motion.span layoutId="proj-tab" className="tab-pill" transition={{ type: "spring", stiffness: 400, damping: 34 }} />}

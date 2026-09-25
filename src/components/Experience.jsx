@@ -10,7 +10,7 @@ export default function Experience() {
       index="02"
       label="experience"
       title="Where I've shipped."
-      intro="Two years building analytics infrastructure at Tellius, plus an NLP internship before that."
+      intro="Nearly two years at Tellius — 780+ pull requests across the React app, Scala services, export workers and deployment configs — plus an NLP internship before that."
     >
       <div className="timeline">
         {experience.map((co, ci) => (
@@ -41,7 +41,15 @@ export default function Experience() {
                       </span>
                     </div>
                     <ul className="role-points">
-                      {r.points.map((p) => <li key={p}>{p}</li>)}
+                      {r.points.map((p) => {
+                        const [lead, text] = Array.isArray(p) ? p : [null, p];
+                        return (
+                          <li key={text}>
+                            {lead && <strong className="point-lead">{lead}: </strong>}
+                            {text}
+                          </li>
+                        );
+                      })}
                     </ul>
                     <div className="chips">
                       {r.stack.map((s) => <span key={s} className="chip chip-sm">{s}</span>)}

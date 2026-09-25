@@ -3,11 +3,11 @@ import {
   SiRabbitmq, SiApachekafka, SiRedis, SiGraphql, SiReact, SiRedux, SiNextdotjs, SiStorybook,
   SiTailwindcss, SiDocker, SiKubernetes, SiPostgresql, SiMongodb, SiPrometheus, SiGithubactions,
   SiCypress, SiPytorch, SiHuggingface, SiScikitlearn, SiLeetcode, SiGeeksforgeeks, SiHackerrank,
-  SiWebrtc, SiJsonwebtokens,
+  SiWebrtc, SiJsonwebtokens, SiJest, SiTestinglibrary, SiHelm, SiGooglechrome, SiDeepgram, SiApache,
 } from "react-icons/si";
 import { FaJava, FaAws } from "react-icons/fa6";
 import {
-  LuServer, LuVideo, LuNetwork, LuBrain, LuCode, LuBraces,
+  LuServer, LuVideo, LuNetwork, LuBrain, LuCode, LuBraces, LuChartLine, LuTable, LuLanguages,
 } from "react-icons/lu";
 
 export const techIcons = {
@@ -19,7 +19,8 @@ export const techIcons = {
   actions: SiGithubactions, cypress: SiCypress, pytorch: SiPytorch, huggingface: SiHuggingface,
   sklearn: SiScikitlearn, leetcode: SiLeetcode, gfg: SiGeeksforgeeks, hackerrank: SiHackerrank,
   webrtc: SiWebrtc, jwt: SiJsonwebtokens, video: LuVideo, tree: LuNetwork, brain: LuBrain,
-  code: LuCode, server: LuServer,
+  code: LuCode, server: LuServer, jest: SiJest, rtl: SiTestinglibrary, helm: SiHelm, chrome: SiGooglechrome,
+  voice: SiDeepgram, apache: SiApache, chart: LuChartLine, table: LuTable, i18n: LuLanguages,
 };
 
 export function TechIcon({ name, size = 18, ...rest }) {

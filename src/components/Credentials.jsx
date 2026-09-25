@@ -54,7 +54,7 @@ export default function Credentials() {
                   <LuArrowUpRight size={15} className="faint ps-arrow" />
                 </div>
                 <div className="ps-count">
-                  {p.count ? <><CountUp to={p.count} />{p.suffix}</> : <span className="muted">—</span>}
+                  {p.count ? <><CountUp to={p.count} />{p.suffix}</> : <span className="ps-count-text">Badges</span>}
                 </div>
                 <div className="ps-platform">{p.platform}</div>
                 <div className="mono small faint">{p.detail}</div>

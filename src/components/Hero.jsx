@@ -17,7 +17,7 @@ function Rotator({ words }) {
   }, [words.length, reduce]);
   return (
     <span className="rotator" aria-live="polite">
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.span
           key={words[i]}
           className="rotator-word"
