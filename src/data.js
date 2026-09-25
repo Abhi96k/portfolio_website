@@ -23,7 +23,7 @@ export const profile = {
     "cloud-native services on AWS",
   ],
   resume:
-    "https://drive.google.com/file/d/1qlVl_FbPefnvE5vgqrBToYCxF3Rh8uxx/view?usp=drive_link",
+    "https://drive.google.com/file/d/1qlCG3WnC6nzM-5ktv1pJFjHeQQkYvxpP/view?usp=sharing",
   socials: {
     github: "https://github.com/Abhi96k",
     linkedin: "https://www.linkedin.com/in/abhishek-nangare-3b6ab1241/",
