@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
-import { LuArrowUp } from "react-icons/lu";
+import { LuArrowUp, LuMail } from "react-icons/lu";
+import { SiGithub, SiLeetcode } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa6";
 import Nav, { NAV_LINKS } from "./components/Nav";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -48,12 +50,26 @@ export default function App() {
 
       <footer className="footer">
         <div className="container footer-inner">
-          <p className="mono small faint">
+          <div className="footer-cta">
+            <p className="footer-title">Open to SDE backend and full-stack roles — let's talk.</p>
+            <a className="mono small accent" href={`mailto:${profile.email}`}>{profile.email}</a>
+          </div>
+          <div className="footer-side">
+            <div className="socials">
+              <a href={profile.socials.github} target="_blank" rel="noreferrer" aria-label="GitHub"><SiGithub size={17} /></a>
+              <a href={profile.socials.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedinIn size={17} /></a>
+              <a href={profile.socials.leetcode} target="_blank" rel="noreferrer" aria-label="LeetCode"><SiLeetcode size={17} /></a>
+              <a href={`mailto:${profile.email}`} aria-label="Email"><LuMail size={17} /></a>
+            </div>
+            <button className="link-btn mono small" onClick={() => scrollToId("top")}>
+              back to top <LuArrowUp size={13} />
+            </button>
+          </div>
+        </div>
+        <div className="container">
+          <p className="mono small faint footer-copy">
             © {new Date().getFullYear()} {profile.name} · Built with React, Vite & Framer Motion
           </p>
-          <button className="link-btn mono small" onClick={() => scrollToId("top")}>
-            back to top <LuArrowUp size={13} />
-          </button>
         </div>
       </footer>
 

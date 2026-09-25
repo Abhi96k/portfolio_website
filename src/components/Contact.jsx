@@ -95,7 +95,7 @@ export default function Contact({ toast }) {
               ) : status === "sent" ? (
                 <p className="small accent">Thanks! Your message is on its way.</p>
               ) : (
-                <p className="small faint">Or email me directly — copy the address on the left.</p>
+                <p className="small faint">Prefer email? Click my address to copy it.</p>
               )}
               <button className="btn btn-primary" type="submit" disabled={status === "sending"}>
                 {status === "sending" ? <><LuLoader size={15} className="spin" /> Sending…</> : <><LuSend size={15} /> Send message</>}
