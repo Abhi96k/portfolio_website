@@ -33,9 +33,24 @@ export const profile = {
   about: [
     "I'm a Software Engineer at Tellius, an AI-driven analytics platform, where I've spent nearly two years shipping features end to end — from the React / TypeScript app analysts use every day to the Scala services, message queues and export workers behind it.",
     "Most of my recent work is the export pipeline: RabbitMQ-backed export jobs with tracking, cancellation and retries, streaming Excel workbooks and batched exports of up to a million rows, and PDF / PPT rendering with headless Chromium on Node.js. I care about predictable systems — controlled acknowledgements, memory budgets, iterative code where recursion would blow the stack — and about testing them.",
-    "Along the way I've built components for our in-house design system, translated the product into Spanish and German, and worked on Kaiya, Tellius's AI analytics assistant. Right now I'm going deeper on Java / Spring Boot, Kafka and system design.",
+    "Along the way I've built components for our in-house design system, translated the product into Spanish and German, and worked on Kaiya, Tellius's AI analytics assistant. Right now I'm going deep on the Java / Spring ecosystem: microservices with Spring Cloud, reactive APIs with WebFlux, Kafka, and distributed-systems patterns like SAGA, Outbox and CQRS.",
   ],
-  learning: ["Java / Spring Boot", "Spring Security · JWT · OAuth2", "Apache Kafka", "System Design"],
+  learning: [
+    "Java · Spring Boot · Spring MVC",
+    "Spring Data JPA · Hibernate",
+    "Spring Security 6 · JWT · OAuth2",
+    "JUnit · Mockito · Testcontainers",
+    "Microservices · Spring Cloud",
+    "Eureka · API Gateway · Config Server",
+    "Resilience4j · Zipkin · ELK",
+    "WebFlux · Project Reactor · R2DBC",
+    "Apache Kafka",
+    "Redis caching · Pub/Sub",
+    "Docker · Kubernetes",
+    "AWS CodePipeline · Elastic Beanstalk",
+    "SAGA · Outbox · CQRS",
+    "Idempotency · Rate limiting · DLQ",
+  ],
 };
 
 export const stats = [
