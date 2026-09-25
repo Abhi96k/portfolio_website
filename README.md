@@ -1,47 +1,62 @@
-# My Portfolio
-Welcome to my portfolio! This project showcases my skills, projects, and experiences as a web developer.
+# Abhishek Nangare — Portfolio
 
-<!-- ### Weblink: [Live Website](https://rishavchanda.netlify.app) -->
+Personal site of **Abhishek Nangare**, Software Development Engineer (Backend & Full Stack) at Tellius.
 
+**Live:** https://portfolio-website-pi-peach.vercel.app
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## Highlights
 
-## Introduction
-My Portfolio is a React.js application that serves as an online portfolio to showcase my work, skills, and achievements. It provides an overview of my background, displays my projects, and offers a way to contact me.
+- **Interactive terminal** in the hero — try `help`, `projects`, `goto contact` or `sudo hire-me`
+- **Async export pipeline simulation** — a live model of a queue-backed, 1M-row export (producer → exchange → queue → workers with prefetch & acks → streamed file)
+- **Command palette** (`⌘K` / `Ctrl K`) to jump to sections, open projects, copy email, switch theme
+- Filterable, searchable **project grid** with detail modals
+- Dark / light theme (remembered), scroll progress, active-section nav, count-up stats
+- Working **contact form** (EmailJS) with a mailto fallback
+- Responsive down to 360px, keyboard accessible, respects `prefers-reduced-motion`
+- SEO: meta + Open Graph tags and JSON-LD `Person` schema
 
-## Features
-- About Me: An overview of my background, skills, and experiences.
-- Projects: A collection of my notable projects with descriptions, screenshots, and links.
-- Skills: A list of my technical skills and proficiencies.
-- Resume: A link to download my resume.
-- Contact: A form to send me messages or inquiries.
+## Stack
 
-## Technologies Used
-- React.js: A JavaScript library for building user interfaces.
-- HTML5 & CSS3: Markup and styling languages for building web pages.
-- JavaScript: A programming language for adding interactivity to web applications.
-- Style-Components: A CSS framework for creating responsive and mobile-first designs.
-- Git: A version control system for tracking changes and collaborating on projects.
-- GitHub Pages: A platform for hosting and deploying web applications.
+React 18 · Vite 5 · Framer Motion · react-icons · plain CSS (custom properties, no UI framework)
 
-## Installation
-To run this portfolio locally, follow these steps:
+## Editing content
 
-1. Clone the repository: `git clone https://github.com/Akshyansu3479/Portfolio`
-2. Navigate to the project directory: `cd Portfolio`
-3. Install the dependencies: `npm install`
-4. Start the development server: `npm start`
-5. Open your browser and visit: `http://localhost:3000`
+Everything — bio, experience, skills, projects, certifications, coding profiles — lives in
+[`src/data.js`](src/data.js). Change it there and the whole site updates.
 
-## Usage
-After installing and running the project locally, you can navigate through the different sections of the portfolio using the navigation menu. Explore the About Me section to learn more about my background and skills. Visit the Projects section to see detailed information about my projects, including descriptions and screenshots. Use the Contact section to send me a message or inquiry.
+## Run locally
 
-## Contributing
-Contributions are welcome!, I would love it!! 
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # production build → dist/
+npm run preview  # serve the build
+```
+
+## Deploy
+
+Deployed on Vercel. `vercel.json` pins the Vite framework preset, so every push to `main` redeploys.
+
+## Structure
+
+```
+index.html              SEO meta, fonts, theme bootstrap
+src/
+  data.js               all site content
+  App.jsx               layout, ⌘K shortcut, footer
+  index.css             design tokens + styles
+  components/
+    Nav.jsx             sticky nav, progress bar, mobile menu
+    Hero.jsx            intro, rotating headline, stats
+    Terminal.jsx        interactive terminal
+    About.jsx
+    Experience.jsx      timeline
+    PipelineDemo.jsx    async export pipeline simulation
+    Skills.jsx
+    Projects.jsx        filters, search, cards, modal
+    Credentials.jsx     certifications, education, problem solving
+    Contact.jsx         EmailJS form
+    CommandPalette.jsx
+    icons.jsx           tech icon map
+    ui.jsx              shared hooks & helpers
+```
