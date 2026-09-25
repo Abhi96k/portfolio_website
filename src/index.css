@@ -9,7 +9,7 @@
   --border-strong: #323843;
   --text: #e9ebee;
   --muted: #a0a7b1;
-  --faint: #6b727d;
+  --faint: #7c838e;
   --accent: #5eead4;
   --accent-2: #2dd4bf;
   --accent-ink: #04201c;
@@ -31,7 +31,7 @@
   --border-strong: #d4d3ce;
   --text: #121416;
   --muted: #4f5660;
-  --faint: #8a909a;
+  --faint: #6b717b;
   --accent: #0f9488;
   --accent-2: #0d7f75;
   --accent-ink: #ffffff;
@@ -318,6 +318,7 @@ input, textarea { font: inherit; color: inherit; }
 .role-points { margin: 14px 0 16px; padding: 0; list-style: none; display: grid; gap: 8px; }
 .role-points li { position: relative; padding-left: 20px; color: var(--muted); font-size: 0.9375rem; line-height: 1.6; }
 .role-points li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+.point-lead { color: var(--text); font-weight: 580; }
 @media (max-width: 640px) {
   .tl-roles { padding-left: 22px; margin-left: 8px; }
   .tl-node { left: -27px; }
@@ -514,6 +515,7 @@ a.plink:hover { color: var(--accent); }
 .ps-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
 .ps-icon { width: 32px; height: 32px; border-radius: 8px; display: grid; place-items: center; background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); }
 .ps-count { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1.2; }
+.ps-count-text { font-size: 1.1rem; font-weight: 560; color: var(--text); }
 .ps-platform { font-weight: 500; font-size: 0.9375rem; }
 .ps-handle { margin-top: 6px; }
 @media (max-width: 860px) { .cred-grid { grid-template-columns: 1fr; } }
@@ -537,7 +539,7 @@ a.plink:hover { color: var(--accent); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .field { display: grid; gap: 6px; }
 .field input, .field textarea {
-  width: 100%; padding: 11px 13px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-2);
+  width: 100%; padding: 11px 13px; border-radius: 10px; border: 1px solid var(--border-strong); background: var(--bg-2);
   outline: none; font-size: 0.9375rem; transition: border-color .2s, box-shadow .2s; resize: vertical;
 }
 .field input::placeholder, .field textarea::placeholder { color: var(--faint); }
@@ -549,8 +551,12 @@ a.plink:hover { color: var(--accent); }
 @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } .form { padding: 18px; } .form-foot .btn { width: 100%; justify-content: center; } }
 
 /* ───────────── Footer & toast ───────────── */
-.footer { border-top: 1px solid var(--border); padding: 28px 0; }
-.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.footer { border-top: 1px solid var(--border); padding: 40px 0 28px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer-cta { display: grid; gap: 6px; }
+.footer-title { font-size: 1.05rem; font-weight: 560; letter-spacing: -0.01em; color: var(--text); }
+.footer-side { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer-copy { margin-top: 24px !important; padding-top: 18px; border-top: 1px dashed var(--border); }
 .footer p { margin: 0; }
 .toast {
   position: fixed; left: 50%; bottom: 24px; z-index: 90; transform: translate(-50%, 20px); opacity: 0; pointer-events: none;

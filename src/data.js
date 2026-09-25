@@ -6,7 +6,7 @@
 export const profile = {
   name: "Abhishek Nangare",
   shortName: "Abhishek",
-  role: "Software Development Engineer",
+  role: "Software Engineer 1",
   focus: "Backend & Full Stack",
   company: "Tellius",
   companyUrl: "https://www.tellius.com/",
@@ -16,11 +16,11 @@ export const profile = {
   tagline:
     "I build backend services and data-heavy product features — async pipelines, REST APIs and the React interfaces that sit on top of them.",
   rotating: [
-    "async, distributed pipelines",
-    "REST APIs that scale",
     "1M-row data exports",
+    "queue-backed export pipelines",
+    "schema-driven dashboards",
     "React + TypeScript UIs",
-    "cloud-native services on AWS",
+    "Scala / Akka HTTP services",
   ],
   resume:
     "https://drive.google.com/file/d/1qlCG3WnC6nzM-5ktv1pJFjHeQQkYvxpP/view?usp=sharing",
@@ -31,17 +31,17 @@ export const profile = {
     leetcode: "https://leetcode.com/u/abhi9001/",
   },
   about: [
-    "I'm a Software Development Engineer at Tellius, an AI-driven analytics platform, where I've spent the last two years building backend services and data-intensive features end to end — from message queues and export pipelines to the React components analysts use every day.",
-    "Most of my recent work sits on the backend: asynchronous, distributed export workflows on Node.js and RabbitMQ that stream, paginate and format datasets of up to a million rows without falling over. I care about predictable systems — controlled acknowledgements, back-pressure, memory budgets — and about testing them, which is why I wired Cypress UI/API regression suites into our CI/CD.",
-    "Right now I'm going deeper on Java / Spring Boot, Spring Security (JWT, OAuth2), Kafka and system design.",
+    "I'm a Software Engineer at Tellius, an AI-driven analytics platform, where I've spent nearly two years shipping features end to end — from the React / TypeScript app analysts use every day to the Scala services, message queues and export workers behind it.",
+    "Most of my recent work is the export pipeline: RabbitMQ-backed export jobs with tracking, cancellation and retries, streaming Excel workbooks and batched exports of up to a million rows, and PDF / PPT rendering with headless Chromium on Node.js. I care about predictable systems — controlled acknowledgements, memory budgets, iterative code where recursion would blow the stack — and about testing them.",
+    "Along the way I've built components for our in-house design system, translated the product into Spanish and German, and worked on Kaiya, Tellius's AI analytics assistant. Right now I'm going deeper on Java / Spring Boot, Kafka and system design.",
   ],
   learning: ["Java / Spring Boot", "Spring Security · JWT · OAuth2", "Apache Kafka", "System Design"],
 };
 
 export const stats = [
-  { value: 2, suffix: "+ yrs", label: "Building production software" },
+  { value: 780, suffix: "+", label: "Pull requests at Tellius" },
   { value: 1, suffix: "M rows", label: "Largest export pipeline handled" },
-  { value: 1250, suffix: "+", label: "DSA problems solved" },
+  { value: 1268, suffix: "+", label: "DSA problems solved" },
   { value: 2, suffix: "× AWS", label: "Certifications" },
 ];
 
@@ -52,16 +52,20 @@ export const experience = [
     location: "Bengaluru · Hybrid",
     roles: [
       {
-        title: "Software Development Engineer (Full Stack)",
+        title: "Software Engineer 1",
         period: "Apr 2025 — Present",
         current: true,
+        // Each point: [lead, detail] — the lead renders in bold
         points: [
-          "Designed RabbitMQ-based asynchronous export workflows — exchanges, queues, consumers and controlled acknowledgements — distributed across multiple service nodes.",
-          "Optimised exports of up to 1M rows with streaming, pagination and memory tuning; built nested pivot-table exports that preserve formatting in Excel/CSV.",
-          "Built reusable data-visualisation components with React, Redux Toolkit, Redux-Saga, TypeScript and Storybook; kept large datasets smooth with virtualisation and memoisation.",
-          "Own features end to end across frontend, middleware (Scala / Akka HTTP) and service integrations; run demos and knowledge-transfer sessions on new platform features.",
+          ["Export pipeline (current focus)", "Moved dashboard and chart exports onto a RabbitMQ job queue with job tracking (including a WAITING state), cancellation of running exports and automatic retries for transient failures — each state surfaced in the UI."],
+          ["Exports up to 1M rows", "Built streaming Excel workbooks (Apache POI) and batched, paginated pivot and table exports to CSV / Excel in Scala / Akka HTTP; fixed a StackOverflowError in pivot exports by rewriting a recursive loop iteratively; kept conditional formatting in exported files."],
+          ["PDF / PPT exports", "Built selective export of chosen tabs, sections and charts, rendered by a headless-Chromium service on Node.js."],
+          ["Vizpad v2 dashboard builder", "My largest area: a schema-driven formatting panel (axes, legends, data labels, KPI targets, number and conditional formatting), Highcharts renderers on a custom patch engine, Gridstack section layouts, viewport virtualisation and 15+ features including bulk apply, multi-sort, year-over-year difference, AI summary and embed URLs."],
+          ["Kaiya AI assistant", "Built prompt management, agentic insights, the Skills and Context admin pages and credits, plus a Deepgram-powered voice assistant shipped in release 6.0."],
+          ["Design system & i18n", "Built core components and schema-driven form fields for the in-house design system in Storybook; translated the whole app into Spanish and German with i18next."],
+          ["Quality", "Wrote Jest + React Testing Library suites (Viz KPI module at 100% coverage) and moved CI from Travis CI to GitHub Actions."],
         ],
-        stack: ["Node.js", "RabbitMQ", "TypeScript", "React", "Redux-Saga", "Scala", "Akka HTTP", "Storybook"],
+        stack: ["TypeScript", "React", "Redux-Saga", "Node.js", "Scala", "Akka HTTP", "RabbitMQ", "Apache POI", "Highcharts", "AG Grid", "Headless Chromium", "Kubernetes / Helm", "Jest", "GitHub Actions"],
       },
       {
         title: "Associate Software Developer",
@@ -95,11 +99,11 @@ export const skills = [
   {
     group: "Languages",
     items: [
-      { name: "Java", icon: "java" },
       { name: "TypeScript", icon: "typescript" },
       { name: "JavaScript", icon: "javascript" },
-      { name: "Python", icon: "python" },
       { name: "Scala", icon: "scala" },
+      { name: "Java", icon: "java" },
+      { name: "Python", icon: "python" },
       { name: "SQL", icon: "mysql" },
     ],
   },
@@ -108,11 +112,11 @@ export const skills = [
     items: [
       { name: "Node.js", icon: "node" },
       { name: "Express", icon: "express" },
-      { name: "Spring Boot", icon: "spring" },
+      { name: "Akka HTTP", icon: "server" },
       { name: "RabbitMQ", icon: "rabbitmq" },
-      { name: "Kafka", icon: "kafka" },
       { name: "Redis", icon: "redis" },
-      { name: "GraphQL", icon: "graphql" },
+      { name: "Apache POI", icon: "apache" },
+      { name: "Headless Chromium", icon: "chrome" },
       { name: "REST / Microservices", icon: "api" },
     ],
   },
@@ -121,8 +125,11 @@ export const skills = [
     items: [
       { name: "React", icon: "react" },
       { name: "Redux Toolkit + Saga", icon: "redux" },
-      { name: "Next.js", icon: "next" },
+      { name: "Highcharts", icon: "chart" },
+      { name: "AG Grid", icon: "table" },
       { name: "Storybook", icon: "storybook" },
+      { name: "i18next", icon: "i18n" },
+      { name: "Next.js", icon: "next" },
       { name: "Tailwind CSS", icon: "tailwind" },
     ],
   },
@@ -132,20 +139,29 @@ export const skills = [
       { name: "AWS", icon: "aws" },
       { name: "Docker", icon: "docker" },
       { name: "Kubernetes", icon: "kubernetes" },
+      { name: "Helm", icon: "helm" },
+      { name: "GitHub Actions", icon: "actions" },
+      { name: "Prometheus", icon: "prometheus" },
       { name: "MySQL", icon: "mysql" },
       { name: "PostgreSQL", icon: "postgres" },
       { name: "MongoDB", icon: "mongodb" },
-      { name: "Prometheus", icon: "prometheus" },
-      { name: "GitHub Actions", icon: "actions" },
     ],
   },
   {
-    group: "Testing & ML",
+    group: "Testing",
     items: [
+      { name: "Jest", icon: "jest" },
+      { name: "React Testing Library", icon: "rtl" },
       { name: "Cypress", icon: "cypress" },
-      { name: "PyTorch", icon: "pytorch" },
+    ],
+  },
+  {
+    group: "AI & ML",
+    items: [
       { name: "Hugging Face", icon: "huggingface" },
+      { name: "PyTorch", icon: "pytorch" },
       { name: "scikit-learn", icon: "sklearn" },
+      { name: "Deepgram", icon: "voice" },
     ],
   },
 ];
@@ -240,87 +256,6 @@ export const projects = [
     github: "https://github.com/Abhi96k/mern-advanced-auth",
   },
   {
-    id: "nextjs-ec2",
-    title: "Next.js CI/CD to AWS EC2",
-    category: "cloud",
-    year: "2024",
-    icon: "actions",
-    summary:
-      "An end-to-end delivery pipeline: every push builds a Docker image in GitHub Actions, publishes it to Docker Hub and rolls it out on an EC2 host.",
-    highlights: [
-      "GitHub Actions workflow: build → push → deploy",
-      "Secrets injected at build time from GitHub encrypted secrets",
-      "Self-hosted runner on EC2 pulls the image & swaps the container",
-    ],
-    stack: ["Next.js", "Docker", "GitHub Actions", "Docker Hub", "AWS EC2"],
-    github: "https://github.com/Abhi96k/nextjs-app-deploy-with-docker-ec2",
-  },
-  {
-    id: "s3-store",
-    title: "S3 Web Store",
-    category: "cloud",
-    year: "2024",
-    icon: "aws",
-    summary:
-      "Next.js App Router app with a server-side route handler that streams uploads straight into Amazon S3 using the AWS SDK v3.",
-    highlights: [
-      "Route handler parses multipart form data on the server",
-      "PutObjectCommand upload with credentials kept server-side",
-      "Least-privilege IAM policy for the bucket",
-    ],
-    stack: ["Next.js", "AWS S3", "AWS SDK v3", "IAM"],
-    github: "https://github.com/Abhi96k/s3_web_store_nextjs",
-  },
-  {
-    id: "rest-graphql",
-    title: "REST + GraphQL API on EC2",
-    category: "backend",
-    year: "2024",
-    icon: "graphql",
-    summary:
-      "The same user service exposed two ways — REST endpoints and a GraphQL schema with queries and mutations — dockerised and deployed to EC2.",
-    highlights: [
-      "GraphQL queries & mutations alongside REST routes",
-      "Clients fetch exactly the fields they need",
-      "Dockerised Node.js service deployed on EC2",
-    ],
-    stack: ["Node.js", "Express", "GraphQL", "Docker", "AWS EC2"],
-    github: "https://github.com/Abhi96k/nodejs-app-mern-ec2-docker",
-  },
-  {
-    id: "dashboard",
-    title: "MERN Admin Dashboard",
-    category: "fullstack",
-    year: "2023",
-    icon: "react",
-    summary:
-      "An analytics dashboard with sales, geography, customer and transaction views — Nivo charts, MUI X data grids and light/dark themes.",
-    highlights: [
-      "Server-side paginated MUI X data grids",
-      "Nivo line, pie, choropleth and breakdown charts",
-      "Express + Mongoose aggregation APIs",
-    ],
-    stack: ["React", "Redux Toolkit", "Node.js", "Express", "MongoDB", "MUI"],
-    github: "https://github.com/Abhi96k/MERN_DASHBOARD",
-    live: "https://react-dashboard12.vercel.app",
-  },
-  {
-    id: "studyflicks",
-    title: "StudyFlicks — Video Platform",
-    category: "fullstack",
-    year: "2023",
-    icon: "video",
-    summary:
-      "A MERN video-sharing platform: upload, stream and search videos, user profiles and notifications, with media stored on Cloudinary.",
-    highlights: [
-      "Video upload pipeline to Cloudinary",
-      "Search & filter across the catalogue",
-      "Redux Toolkit state, Tailwind UI, fully responsive",
-    ],
-    stack: ["React", "Node.js", "Express", "MongoDB", "Cloudinary", "Tailwind"],
-    github: "https://github.com/Abhi96k/StudyFlicks",
-  },
-  {
     id: "tree-viz",
     title: "Binary Tree Visualizer",
     category: "fullstack",
@@ -336,23 +271,6 @@ export const projects = [
     stack: ["JavaScript", "D3.js", "SVG", "CSS"],
     github: "https://github.com/Abhi96k/Tree_Algo_visulization",
     live: "https://tree-algo-visulization.vercel.app/",
-  },
-  {
-    id: "health-ai",
-    title: "CareTake AI — Health Assistant",
-    category: "ml",
-    year: "2024",
-    icon: "brain",
-    summary:
-      "An ML-powered health companion: symptom checking, disease-risk prediction models and lifestyle suggestions, served as a Streamlit app.",
-    highlights: [
-      "Six disease-risk models (heart, liver, diabetes, kidney…) + XGBoost symptom model",
-      "Symptom input → likely conditions & guidance",
-      "Deployed on Streamlit Community Cloud",
-    ],
-    stack: ["Python", "scikit-learn", "XGBoost", "Pandas", "Plotly", "Streamlit"],
-    github: "https://github.com/Abhi96k/AI-Based-Health-assistant-",
-    live: "https://ai-health-assistance-alert.streamlit.app/",
   },
 ];
 
